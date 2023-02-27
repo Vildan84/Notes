@@ -11,16 +11,17 @@ import delete_note
 
 
 @click.group()
+@click.help_option("--title", "-t", help="Добавление и изменение заголовка к заметке")
+@click.help_option("--msg", "-m", help="Добавление и изменение текста к заметке")
 def main():
-    """Это простое приложение заметки"""
+    """Simple app Notes"""
     pass
 
 
 @click.command()
-@click.option("--title", "-t", default="Заметка", help="Добавление заголовка к заметке")
-@click.option("--msg", "-m", default="Пустой текст", help="Основное тело заметки")
+@click.option("--title", "-t", default="Заметка")
+@click.option("--msg", "-m", default="Пустой текст")
 def add(title, msg):
-
     ident = time.strftime("%m%d%H%M%S", time.localtime())
     my_note = note.Note(ident, title, msg)
     write.write_to_json(my_note)
@@ -28,9 +29,16 @@ def add(title, msg):
 
 @click.command()
 @click.argument("ident")
-@click.option("--body", "-b", help="Изменение текста заметки")
-def edit(ident, body):
-    edit_note.edit(ident, body)
+@click.option("--msg", "-m")
+@click.option("--title", "-t")
+def edit(ident, msg, title):
+    if msg and title:
+        edit_note.edit_body(ident, msg)
+        edit_note.edit_title(ident, title)
+    elif title:
+        edit_note.edit_title(ident, title)
+    else:
+        edit_note.edit_body(ident, msg)
 
 
 @click.command()
@@ -41,7 +49,6 @@ def delete(ident):
 
 @click.command()
 def list():
-
     if os.path.exists(config.file_path):
         dictionary = read.read_from_json()
         list_notes.list_of_notes(dictionary)

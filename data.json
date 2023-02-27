@@ -1,16 +1,22 @@
 {
   "notes": [
     {
-      "id": "0227123020",
-      "title": "newtitle",
-      "body": "some text",
-      "date": "23/02/27/ 12:30:20"
+      "id": "0227152739",
+      "title": "and new message",
+      "body": "and new message",
+      "date": "23/02/27/ 15:59:08"
     },
     {
-      "id": "0227123017",
-      "title": "title",
-      "body": "editing text done",
-      "date": "23/02/27/ 14:14:14"
+      "id": "0227123020",
+      "title": "and title too",
+      "body": "i want to edit this message",
+      "date": "23/02/27/ 16:00:45"
+    },
+    {
+      "id": "0227160141",
+      "title": "Заметка",
+      "body": "i want to create new note",
+      "date": "23/02/27/ 16:01:41"
     }
   ]
 }

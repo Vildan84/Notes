@@ -13,8 +13,9 @@ def delete(ident):
                 dictionary['notes'].remove(item)
                 with open("data.json", "w", encoding='utf-8') as f:
                     json.dump(dictionary, f, ensure_ascii=False, indent=2)
-            else:
-                print("Неверный ID заметки")
-            break
+                break
+        else:
+            print("Неверный ID заметки")
+
     else:
         print("Файл не найден")
