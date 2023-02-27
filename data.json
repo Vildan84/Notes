@@ -1,0 +1,16 @@
+{
+  "notes": [
+    {
+      "id": "0227123020",
+      "title": "newtitle",
+      "body": "some text",
+      "date": "23/02/27/ 12:30:20"
+    },
+    {
+      "id": "0227123017",
+      "title": "title",
+      "body": "editing text done",
+      "date": "23/02/27/ 14:14:14"
+    }
+  ]
+}

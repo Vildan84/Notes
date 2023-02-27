@@ -2,13 +2,12 @@ import json
 import note
 import read
 import os.path
+import config
 
 
 def write_to_json(n: note.Note):
 
-    file_path = "./data.json"
-
-    if os.path.exists(file_path):
+    if os.path.exists(config.file_path):
         data = read.read_from_json()
         mydict = {"id": n.get_ident(), "title": n.get_title(), "body": n.get_body(), "date": n.get_date()}
         data["notes"].append(mydict)

@@ -1,4 +1,4 @@
-from datetime import datetime
+import time
 
 
 class Note:
@@ -7,7 +7,7 @@ class Note:
         self.ident = ident
         self.title = title
         self.body = body
-        self.date = str(datetime.now())
+        self.date = time.strftime("%y/%m/%d/ %H:%M:%S", time.localtime())
 
     def get_ident(self):
         return self.ident
